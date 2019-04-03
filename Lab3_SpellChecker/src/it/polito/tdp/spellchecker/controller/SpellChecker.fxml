@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
    <top>
       <Label text="Lab3_SpellChecker" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -27,13 +26,12 @@
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Label text="Choose the language:" />
-                        <ComboBox fx:id="btmSelezione" prefWidth="150.0" />
+                        <ComboBox fx:id="btmSelezione" onAction="#selezionaLingua" prefWidth="150.0" visibleRowCount="3" />
                      </children>
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
                   </HBox>
-                  <TextField />
                   <TextArea fx:id="txtDaInserire" />
                   <Button fx:id="btnSpell" mnemonicParsing="false" onAction="#Spelling" text="Spell Check">
                      <VBox.margin>
@@ -67,7 +65,10 @@
             </VBox>
          </center>
          <bottom>
-            <TextField fx:id="txtTempo" promptText="Tempo di completamento" BorderPane.alignment="CENTER" />
+            <TextField fx:id="txtTempo" promptText="Tempo di completamento" BorderPane.alignment="CENTER">
+               <opaqueInsets>
+                  <Insets bottom="10.0" />
+               </opaqueInsets></TextField>
          </bottom>
       </BorderPane>
    </left>
